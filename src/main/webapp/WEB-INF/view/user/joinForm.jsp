@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
     <%@ include file="../layout/header.jsp" %>
 
         <div class="container my-3">
@@ -17,7 +16,7 @@
                     </div>
 
                     <div class="form-group mb-2">
-                        <input type="password" class="form-control" placeholder="Enter passwordCheck"
+                        <input type="password" name="passwordCheck" class="form-control" placeholder="Enter passwordCheck"
                             id="passwordCheck">
                     </div>
 
@@ -33,7 +32,14 @@
 
         <script>
             function valid() {
-                alert("회원가입 유효성 검사");
+                let password = $("#password").val();
+                let passwordCheck = $("#passwordCheck").val();
+
+                if (password != passwordCheck) {
+                    alert("비밀번호가 맞지 않습니다.");
+                    return false;
+                }
+                return true;
             }
         </script>
 
